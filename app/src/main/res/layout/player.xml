@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".player"
+    android:weightSum="100"
+    android:id="@+id/musicPlayer">
+
+<com.jgabrielfreitas.core.BlurImageView
+    android:id="@+id/music_background_image"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="fitXY"
+    android:background="#567280"></com.jgabrielfreitas.core.BlurImageView>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/music_foreground_image"
+        android:transitionName="circularView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="120dp"
+        android:layout_alignBottom="@+id/seekBar"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="60dp"
+        app:civ_border_color="@android:color/white"
+        app:civ_border_width="1dp"
+        android:background="@color/transparent"
+        ></de.hdodenhof.circleimageview.CircleImageView>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignTop="@+id/plybtn"
+        android:layout_toEndOf="@id/currentDuration"
+        android:layout_toStartOf="@+id/songMaxDuration"
+        android:layout_marginTop="-40dp"></SeekBar>
+
+    <TextView
+        android:id="@+id/songTitle"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_toEndOf="@id/plybtn"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_alignTop="@id/plybtn"
+        android:paddingTop="2dp"
+        android:gravity="center_vertical"
+        android:text="@string/song_tittle"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/White"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:transitionName="songTittle" />
+
+    <TextView
+        android:id="@+id/artist_view"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_toEndOf="@id/plybtn"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_alignTop="@id/plybtn"
+        android:layout_marginTop="25dp"
+        android:text="Artist Name"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textColor="@color/White"
+        android:textSize="15sp"
+        android:transitionName="songTittle"></TextView>
+
+    <ImageView
+        android:id="@+id/plybtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/circle_shape"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:transitionName="platBtn"
+        app:srcCompat="@drawable/ic_play_arrow_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/currentDuration"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textSize="17sp"
+        android:textColor="@color/White"
+        android:layout_height="25dp"
+        android:layout_alignTop="@+id/seekBar"
+        android:layout_alignBottom="@+id/seekBar"
+        android:gravity="center"></TextView>
+    <TextView
+        android:id="@+id/songMaxDuration"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/seekBar"
+        android:layout_alignTop="@id/seekBar"
+        android:layout_width="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/White"
+        android:layout_height="25dp"
+        android:layout_marginEnd="10dp"
+        android:gravity="center"></TextView>
+
+
+
+</RelativeLayout>

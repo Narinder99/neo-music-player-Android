@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.percentlayout.widget.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/slideUpPannel"
+    android:background="#0C040E"
+    android:weightSum="100"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_heightPercent="94%">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:id="@+id/setting">
+
+            <ImageView
+                android:id="@+id/search_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_search_black_24dp"
+                android:backgroundTint="@color/White"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/moreInfo"></ImageView>
+
+
+            <ImageView
+                android:id="@+id/moreInfo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/ic_more_horiz_black_24dp"
+                android:backgroundTint="@color/White"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"></ImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/viewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/songs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="SONGS">
+                </com.google.android.material.tabs.TabItem>
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/artist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ARTIST"></com.google.android.material.tabs.TabItem>
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/folder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="FOLDER"></com.google.android.material.tabs.TabItem>
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/playlists"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="PLAYLISTS"></com.google.android.material.tabs.TabItem>
+            </com.google.android.material.tabs.TabLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout"></androidx.viewpager.widget.ViewPager>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/miniMusicPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainView"
+        app:layout_heightPercent="7%"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/zblack"></View>
+
+        <androidx.percentlayout.widget.PercentRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="100">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/songsImage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:transitionName="circularView"
+                android:src="@drawable/music"
+                app:layout_widthPercent="15%"
+                app:civ_border_color="@android:color/black"
+                app:civ_border_width="1dp"></de.hdodenhof.circleimageview.CircleImageView>
+
+            <TextView
+                android:id="@+id/songName"
+                android:transitionName="songTittle"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_toEndOf="@+id/songsImage"
+                android:layout_marginStart="10dp"
+                android:text="Hello"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="bottom"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                app:layout_heightPercent="50%"
+                app:layout_widthPercent="50%"></TextView>
+
+            <TextView
+                android:id="@+id/artist_miniPlayer"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/songsImage"
+                android:layout_marginStart="10dp"
+                android:text="buddy"
+                android:textSize="15sp"
+                android:textColor="@color/White"
+                android:maxLines="1"
+                android:gravity="top"
+                app:layout_heightPercent="50%"
+                app:layout_widthPercent="50%"></TextView>
+
+            <ImageView
+                android:id="@+id/playbtn"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                app:layout_heightPercent="80%"
+                app:layout_widthPercent="20%"
+                android:transitionName="platBtn"
+                app:srcCompat="@drawable/ic_play_arrow_black_24dp"
+                tools:ignore="VectorDrawableCompat"></ImageView>
+
+
+        </androidx.percentlayout.widget.PercentRelativeLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.percentlayout.widget.PercentRelativeLayout>

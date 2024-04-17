@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">NEO music player</string>
+    <string name="Drawer_close">Drawer close</string>
+    <string name="Drawer_open">Drawer open</string>
+    <string name="minimized_player">minimized Player</string>
+    <string name="song_tittle">Song Tittle</string>
+    <string name="todo">TODO</string>
+    <string name="neo_player">NEO Player</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

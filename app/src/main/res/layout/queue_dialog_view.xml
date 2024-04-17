@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:weightSum="100">
+    <ImageView
+        android:id="@+id/queue_RecyclerView_image"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_weight="15"
+        android:layout_height="40dp"
+        android:paddingStart="10dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:paddingEnd="4dp"
+        android:src="@drawable/music"
+        android:tint="@color/White"></ImageView>
+    <TextView
+        android:id="@+id/queue_RecyclerView_text"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_weight="78"
+        android:background="@color/transparent"
+        android:text="Queue Songs"
+        android:textColor="@color/White"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:textSize="18sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"></TextView>
+
+    <ImageView
+        android:id="@+id/song_Status"
+        android:layout_width="0dp"
+        android:layout_weight="7"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="0dp"></ImageView>
+</LinearLayout>

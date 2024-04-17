@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/searchedType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="hello"
+        android:textSize="25sp"
+        android:paddingStart="20dp"
+        android:textColor="#351039"
+        android:textStyle="bold"
+        android:gravity="center_vertical"></TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchBarAdapterRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingEnd="15dp"
+        android:paddingStart="10dp"></androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
